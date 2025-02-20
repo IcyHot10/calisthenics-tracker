@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CalTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/secondary</item>
+        <item name="colorOnPrimary">@color/tertiary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/light_blue</item>
+        <item name="colorOnSecondary">@color/light_blue</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/secondary_background</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/secondary_background</item>
+        <item name="android:colorBackground">@color/primary_background</item>
+        <item name="android:textColor">@color/secondary_background</item>
+        <item name="android:textColorHint">@color/secondary_background</item>
+        <item name="android:textColorSecondary">@color/secondary</item>
+        <item name="android:itemBackground">@color/primary_background</item>
+        <item name="colorPrimaryContainer">@color/primary_background</item>
+        <item name="colorOnPrimaryContainer">@color/primary</item>
+        <item name="colorSurface">@color/primary_background</item>
+        <item name="colorSurfaceVariant">@color/secondary_background</item>
+    </style>
+
+    <style name="Theme.CalTracker" parent="Base.Theme.CalTracker" />
+</resources>

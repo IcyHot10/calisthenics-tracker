@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/TRHeaders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+            <TextView
+                android:id="@+id/textViewExercise"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/secondary"
+                android:text="Exercise" />
+
+            <TextView
+                android:id="@+id/textViewCurrent"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/secondary"
+                android:text="Current Step" />
+
+            <TextView
+                android:id="@+id/textViewCurretProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/secondary"
+                android:text="Progress" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TROA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewOA"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="OA Pushups" />
+
+            <TextView
+                android:id="@+id/textViewCurrentOA"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberOA"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:focusable="false"
+                android:ems="10"
+                android:inputType="none"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevOA"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                style="myCustomThemeForNormalFab"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextOA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRHS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewHS"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="HS Pushups" />
+
+            <TextView
+                android:id="@+id/textViewCurrentHS"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberHS"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevHS"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextHS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRPP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewPP"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Planche Pushups" />
+
+            <TextView
+                android:id="@+id/textViewCurrentPP"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberPP"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevPP"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRPU"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewPU"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Pull Ups" />
+
+            <TextView
+                android:id="@+id/textViewCurrentPU"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberPU"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevPU"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRMU"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewMU"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Muscle Ups" />
+
+            <TextView
+                android:id="@+id/textViewCurrentMU"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberMU"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevMU"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextMU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRDips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewDips"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Dips" />
+
+            <TextView
+                android:id="@+id/textViewCurrentDips"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberDips"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevDips"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextDips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRSquats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewSquats"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Squats" />
+
+            <TextView
+                android:id="@+id/textViewCurrentSquats"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberSquats"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevSquats"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextSquats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRLunges"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewLunges"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Lunges" />
+
+            <TextView
+                android:id="@+id/textViewCurrentLunges"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberLunges"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevLunges"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextLunges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRCore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewCore"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Core" />
+
+            <TextView
+                android:id="@+id/textViewCurrentCore"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberCore"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevCore"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextCore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRBridges"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewBridges"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Bridges" />
+
+            <TextView
+                android:id="@+id/textViewCurrentBridges"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberBridges"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevBridges"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextBridges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TRGS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewGS"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="Grip Strength" />
+
+            <TextView
+                android:id="@+id/textViewCurrentGS"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="left|center"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/editTextNumberGS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:focusable="false"
+                android:text="0" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPrevGS"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonNextGS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabCustomSize="25dp"
+                app:srcCompat="@drawable/baseline_arrow_circle_right_24" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
