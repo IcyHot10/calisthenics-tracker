@@ -150,9 +150,9 @@ class StatsLayout: Fragment() {
     fun updateStepComponents(){
         val exercise = exercises.filter { it.exerciseDescription == spinnerStep.selectedItem }[0]
         textViewStepProgress.text = "${
-            exercise.currentReps?.split(',')?.map { it.replace("[","").replace("]","").replace(" ","").toInt() }?.sum()
+            exercise.currentReps?.split(',')?.map { if (it.contains("null")) 0 else it.replace("[","").replace("]","").replace(" ","").toInt() }?.sum()
                 ?.times(100)?.div(exercise.sets!!.times(exercise.reps!!))?.toInt() ?: 0}%"
-        progressBarStep.progress = exercise.currentReps?.split(',')?.map { it.replace("[","").replace("]","").replace(" ","").toInt() }?.sum()!!
+        progressBarStep.progress = exercise.currentReps?.split(',')?.map { if (it.contains("null")) 0 else it.replace("[","").replace("]","").replace(" ","").toInt() }?.sum()!!
         progressBarStep.max = exercise.sets!!.times(exercise.reps!!)
 
         populateGraph()
@@ -161,12 +161,12 @@ class StatsLayout: Fragment() {
     fun updateExerciseComponentsData(){
         exerciseGroups = database.exerciseGroupDao().getAll()
         exercises = database.exerciseDao().getByGroupId(exerciseGroups[0].exerciseGroupId)
-        group = exerciseGroups[0]
+        group = exerciseGroups.filter { it.exerciseGroupName == spinnerExercise.selectedItem }[0]
         exercises = database.exerciseDao().getByGroupId(exerciseGroups.filter { it.exerciseGroupName == group.exerciseGroupName }[0].exerciseGroupId)
     }
 
     fun updateStepComponentsData(){
-        val exercise = exercises[0]
+        val exercise = exercises.filter { it.exerciseDescription == spinnerStep.selectedItem }[0]
         lateinit var hist: List<ExerciseSession>
         var progress = 0
         var array: MutableList<DataPoint> = mutableListOf<DataPoint>()

@@ -85,7 +85,7 @@ abstract class AppDatabase : RoomDatabase() {
                     val b2 = Exercise(81, 9, 1, "Hanging knee raises 5x10", 0, 5, 10, listOf(null, null, null, null, null).toString())
                     val b3 = Exercise(82, 9, 2, "Hanging leg raises 5x10", 0, 5, 10, listOf(null, null, null, null, null).toString())
                     val b4 = Exercise(83, 9, 3, "Band assisted L sit 3x30", 0, 3, 30, listOf(null, null, null).toString())
-                    val b5 = Exercise(84, 9, 4, "L sit 2x30", 0, 2, 30, listOf(0, 0).toString())
+                    val b5 = Exercise(84, 9, 4, "L sit 2x30", 0, 2, 30, listOf(null, null).toString())
                     val c1 = Exercise(90, 8, 0, "Regular 3x20", 0, 3, 20, listOf(null, null, null).toString())
                     val c2 = Exercise(91, 8, 1, "Elevated Leg 3x20", 0, 3, 20, listOf(null, null, null).toString())
                     val c3 = Exercise(92, 8, 2, "One Leg Gecko Bridges 3x20", 0, 3, 20, listOf(null, null, null).toString())
